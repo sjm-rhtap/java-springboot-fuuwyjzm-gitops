@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: java-springboot-fuuwyjzm
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-tssc/task-runner:1.8
-        name: container-image  
+        - image: nexus-docker-nexus.apps.cluster-852ff.852ff.sandbox200.opentlc.com/rhtap/java-springboot-fuuwyjzm:e8778fdda7e9045fb2c8ee730498f8b123705b22@sha256:c32449d380563ec3d3ee9d04bb8b06ecb94e5bcc3cc9be9f20a9726f2857402c
+          name: container-image
